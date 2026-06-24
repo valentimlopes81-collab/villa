@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#795548"/>
+      <stop offset="100%" stop-color="#d7ccc8"/>
+    </linearGradient>
+    <pattern id="p" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="none"/>
+      <circle cx="20" cy="20" r="1.2" fill="rgba(255,255,255,0.08)"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <rect width="1200" height="900" fill="url(#p)"/>
+  <text x="50%" y="48%" font-family="Georgia, serif" font-size="54" fill="rgba(255,255,255,0.92)" text-anchor="middle" dominant-baseline="middle">Dining Area</text>
+  <text x="50%" y="56%" font-family="Helvetica, Arial, sans-serif" font-size="13" letter-spacing="3" fill="rgba(255,255,255,0.55)" text-anchor="middle" dominant-baseline="middle">PLACEHOLDER &#8212; REPLACE WITH REAL PHOTO</text>
+</svg>
