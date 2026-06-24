@@ -11,6 +11,5 @@
   </defs>
   <rect width="1920" height="1080" fill="url(#g)"/>
   <rect width="1920" height="1080" fill="url(#p)"/>
-  <text x="50%" y="48%" font-family="Georgia, serif" font-size="87" fill="rgba(255,255,255,0.92)" text-anchor="middle" dominant-baseline="middle">Villa Hero View</text>
-  <text x="50%" y="56%" font-family="Helvetica, Arial, sans-serif" font-size="21" letter-spacing="3" fill="rgba(255,255,255,0.55)" text-anchor="middle" dominant-baseline="middle">PLACEHOLDER &#8212; REPLACE WITH REAL PHOTO</text>
+  <text x="50%" y="92%" font-family="Helvetica, Arial, sans-serif" font-size="21" letter-spacing="3" fill="rgba(255,255,255,0.45)" text-anchor="middle" dominant-baseline="middle">PLACEHOLDER &#8212; REPLACE WITH REAL PHOTO</text>
 </svg>
