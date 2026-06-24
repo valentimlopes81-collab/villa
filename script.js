@@ -21,6 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
   revealEls.forEach(el => revealObserver.observe(el));
 
+  // Marquee ticker — fill at least 2x viewport width with sets, then duplicate once for a seamless loop
+  const marqueeTrack = document.getElementById('marquee-track');
+  if (marqueeTrack) {
+    const baseSet = marqueeTrack.querySelector('.marquee-set');
+    const minWidth = window.innerWidth * 2;
+    while (marqueeTrack.scrollWidth < minWidth) {
+      marqueeTrack.appendChild(baseSet.cloneNode(true));
+    }
+    const filledHTML = marqueeTrack.innerHTML;
+    marqueeTrack.innerHTML = filledHTML + filledHTML;
+  }
+
   // Scroll progress bar
   const progressBar = document.getElementById('scroll-progress');
   const updateProgress = () => {
