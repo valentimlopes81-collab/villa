@@ -251,6 +251,21 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBooking();
   });
 
+  // Floating booking CTA
+  const floatingCta = document.getElementById('floating-cta');
+  const heroSection = document.getElementById('home');
+  const ctaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => floatingCta.classList.toggle('visible', !entry.isIntersecting));
+  }, { threshold: 0 });
+  if (heroSection) ctaObserver.observe(heroSection);
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 });
