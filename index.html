@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Villa Aurora — Luxury Stay</title>
-<meta name="description" content="Villa Aurora — a private luxury escape with pool, garden, and ocean views. Edit this copy and swap the placeholder photos for your own.">
+<title>Villa Aurora — Luxury Villa in Malta</title>
+<meta name="description" content="Villa Aurora — a private luxury villa on the Maltese coast, with a pool, garden, and Mediterranean sea views. Minutes from Valletta and Malta's historic harbour towns.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -24,7 +24,7 @@
       <a href="#rooms">Rooms</a>
       <a href="#amenities">Amenities</a>
       <a href="#location">Location</a>
-      <a href="#book" class="nav-cta">Book Now</a>
+      <a href="#book" class="nav-cta js-open-booking">Book Now</a>
     </nav>
     <button id="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
@@ -35,10 +35,10 @@
   <div class="hero-bg" style="background-image:url('https://i.postimg.cc/S2p8Fr6F/5cf97ab0-002e-4006-b207-b9a75cca4f28.avif')"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-kicker" data-aos="fade-down" data-aos-delay="100">A Private Escape</p>
+    <p class="hero-kicker" data-aos="fade-down" data-aos-delay="100">A Private Escape in Malta</p>
     <h1 data-aos="fade-up" data-aos-delay="250">Villa Aurora</h1>
-    <p class="hero-sub" data-aos="fade-up" data-aos-delay="400">Sun, sea air, and quiet luxury — replace this with your property's story.</p>
-    <a href="#book" class="btn btn-light" data-aos="fade-up" data-aos-delay="550">Check Availability</a>
+    <p class="hero-sub" data-aos="fade-up" data-aos-delay="400">Perched above the Mediterranean on Malta's sun-drenched coast, where golden limestone meets the sea.</p>
+    <a href="#book" class="btn btn-light js-open-booking" data-aos="fade-up" data-aos-delay="550">Check Availability</a>
   </div>
   <div class="scroll-indicator"><span></span></div>
 </section>
@@ -69,10 +69,10 @@
     <div class="about-text" data-aos="fade-right">
       <p class="section-kicker">The Property</p>
       <h2>A villa built for slow mornings<br>and golden evenings</h2>
-      <p class="about-copy">Replace this paragraph with a real description of the property — the setting, the architecture, what makes it special. Mention the neighborhood, the view, and the feeling guests get the moment they walk in.</p>
-      <p class="about-copy">Add a second paragraph here about nearby attractions, beaches, restaurants, or anything that helps guests picture their stay.</p>
+      <p class="about-copy">Set on a quiet ridge above Malta's northern coastline, Villa Aurora pairs traditional limestone architecture with a fully modern interior. Sea views stretch from the infinity pool across to Comino and Gozo, and the honey-coloured stone walls glow at sunset — the kind of light Malta is known for.</p>
+      <p class="about-copy">Just minutes from the fishing village of Mellieħa and the white sands of Golden Bay, the villa sits close enough to explore the island's harbours and historic towns, yet private enough to feel like your own corner of the Mediterranean.</p>
       <div class="about-features">
-        <div class="feature"><span class="feature-ico">⌖</span>Prime Location</div>
+        <div class="feature"><span class="feature-ico">⌖</span>North Malta Coast</div>
         <div class="feature"><span class="feature-ico">⌗</span>Private Pool</div>
         <div class="feature"><span class="feature-ico">⌘</span>Fully Equipped</div>
       </div>
@@ -156,11 +156,11 @@
     <div class="location-text" data-aos="fade-left">
       <p class="section-kicker">Where You'll Be</p>
       <h2>The Location</h2>
-      <p class="about-copy">Replace this with the actual neighborhood description — distance to the beach, town, airport, and any landmarks nearby.</p>
+      <p class="about-copy">Villa Aurora sits above Malta's rugged northwest coast, between the limestone cliffs of Mellieħa and the turquoise waters of Golden Bay. The walled city of Mdina, Malta's former capital, is a short drive inland, while the Baroque harbours of Valletta and the ferry to Gozo and Comino's Blue Lagoon are both within easy reach for a day trip.</p>
       <div class="location-list">
-        <div class="loc-item"><strong>5 min</strong><span>to the beach</span></div>
-        <div class="loc-item"><strong>15 min</strong><span>to town center</span></div>
-        <div class="loc-item"><strong>30 min</strong><span>to airport</span></div>
+        <div class="loc-item"><strong>5 min</strong><span>to Golden Bay beach</span></div>
+        <div class="loc-item"><strong>15 min</strong><span>to Mdina</span></div>
+        <div class="loc-item"><strong>35 min</strong><span>to Malta Airport</span></div>
       </div>
     </div>
   </div>
@@ -170,20 +170,48 @@
 <section id="book" class="book">
   <div class="book-inner" data-aos="zoom-in">
     <p class="section-kicker">Ready When You Are</p>
-    <h2>Plan Your Stay at Villa Aurora</h2>
-    <p class="about-copy">Replace this CTA with your real Airbnb link, phone number, or contact form.</p>
-    <a href="#" class="btn btn-dark">Reserve Your Dates</a>
+    <h2>Plan Your Stay at Villa Aurora, Malta</h2>
+    <p class="about-copy">Check live availability and pick your dates below — or reach out directly to plan a longer stay.</p>
+    <a href="#" class="btn btn-dark js-open-booking">Reserve Your Dates</a>
   </div>
 </section>
 
 <footer>
-  <p>&copy; <span id="year"></span> Villa Aurora. All rights reserved.</p>
+  <p>&copy; <span id="year"></span> Villa Aurora, Malta. All rights reserved.</p>
 </footer>
 
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox">
   <button id="lightbox-close" aria-label="Close">&times;</button>
   <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- Booking Calendar Modal -->
+<div id="booking-modal" class="booking-modal">
+  <div class="booking-panel">
+    <button id="booking-close" aria-label="Close">&times;</button>
+    <p class="section-kicker">Villa Aurora, Malta</p>
+    <h3>Select Your Dates</h3>
+    <div class="booking-calendar">
+      <div class="cal-header">
+        <button id="cal-prev" aria-label="Previous month">&#8249;</button>
+        <span id="cal-month-label"></span>
+        <button id="cal-next" aria-label="Next month">&#8250;</button>
+      </div>
+      <div class="cal-weekdays">
+        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+      </div>
+      <div id="cal-grid" class="cal-grid"></div>
+    </div>
+    <div class="booking-summary">
+      <div class="booking-dates">
+        <div><span class="booking-label">Check-in</span><strong id="booking-checkin">—</strong></div>
+        <div><span class="booking-label">Check-out</span><strong id="booking-checkout">—</strong></div>
+        <div><span class="booking-label">Nights</span><strong id="booking-nights">—</strong></div>
+      </div>
+      <button id="booking-confirm" class="btn btn-dark" disabled>Request to Book</button>
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
