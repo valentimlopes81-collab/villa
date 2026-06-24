@@ -74,6 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.4 });
   if (statsSection) statsObserver.observe(statsSection);
 
+  // Gallery captions
+  document.querySelectorAll('.g-item').forEach(item => {
+    const img = item.querySelector('img');
+    const caption = document.createElement('span');
+    caption.className = 'g-caption';
+    caption.textContent = img.alt;
+    item.appendChild(caption);
+  });
+
   // Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
