@@ -21,6 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
   revealEls.forEach(el => revealObserver.observe(el));
 
+  // Scroll progress bar
+  const progressBar = document.getElementById('scroll-progress');
+  const updateProgress = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    progressBar.style.width = `${pct}%`;
+  };
+  window.addEventListener('scroll', updateProgress);
+  updateProgress();
+
+  // Custom cursor
+  const cursorDot = document.getElementById('cursor-dot');
+  if (matchMedia('(pointer: fine)').matches) {
+    window.addEventListener('mousemove', (e) => {
+      cursorDot.style.left = `${e.clientX}px`;
+      cursorDot.style.top = `${e.clientY}px`;
+      cursorDot.classList.add('visible');
+    });
+    document.querySelectorAll('a, button, .g-item, [data-lightbox]').forEach(el => {
+      el.addEventListener('mouseenter', () => cursorDot.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => cursorDot.classList.remove('hovering'));
+    });
+  }
+
   // Navbar scroll state
   const navbar = document.getElementById('navbar');
   const onScroll = () => {
@@ -82,6 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
     caption.textContent = img.alt;
     item.appendChild(caption);
   });
+
+  // Gallery 3D tilt
+  if (matchMedia('(pointer: fine)').matches) {
+    document.querySelectorAll('.g-item').forEach(item => {
+      item.addEventListener('mousemove', (e) => {
+        const rect = item.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        item.style.transform = `perspective(800px) rotateX(${y * -10}deg) rotateY(${x * 10}deg)`;
+      });
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
+      });
+    });
+  }
 
   // Lightbox
   const lightbox = document.getElementById('lightbox');
